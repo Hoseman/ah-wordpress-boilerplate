@@ -1,0 +1,11 @@
+.footer {
+  background: $dark-background;
+  padding: 2rem 0;
+  &__layout {
+    display: flex;
+    justify-content: space-between;
+    a {
+      color: $white;
+    }
+  }
+}

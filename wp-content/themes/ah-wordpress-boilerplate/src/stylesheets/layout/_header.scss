@@ -1,0 +1,102 @@
+// // Header.
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 5;
+  padding: 0.75rem 0;
+  background: $dark-background;
+  @include tablet {
+    padding: 0.35rem 0;
+  }
+  &__layout {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    @include laptop {
+      flex-wrap: nowrap;
+    }
+  }
+}
+
+// Navigation.
+.navigation {
+  display: none;
+  flex-basis: 100%;
+  padding-top: 1rem;
+  @include tablet {
+    flex-basis: unset;
+    padding: unset;
+    display: initial;
+  }
+  .menu-item-has-children {
+    position: relative;
+    &:hover {
+      .menu-list {
+        display: block;
+      }
+    }
+  }
+  .menu-item-has-children > a {
+    position: relative;
+    padding-right: 2rem !important; // sass-lint:disable-line no-important
+    &:after {
+      @extend %pseudo;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: url("../../dist/assets/images/icons/chevron-down.svg")
+        no-repeat center;
+      right: 5px;
+      width: 15px;
+      height: 15px;
+      z-index: 2;
+    }
+  }
+  .menu {
+    @include tablet {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    ul {
+      display: none;
+      background: $dark-background;
+      padding: 1rem 1.5rem;
+      @include tablet {
+        position: absolute;
+        top: 100%;
+        left: 0;
+      }
+    }
+    li {
+      padding: 0.5rem 0;
+      @include tablet {
+        margin: 0 1rem;
+      }
+      @include laptop {
+        margin: 0 2rem;
+      }
+      @include desktop {
+        margin: 0 3rem;
+      }
+      &:first-of-type {
+        margin-left: unset;
+      }
+      &:last-of-type {
+        margin-right: unset;
+      }
+      a {
+        @extend %hover;
+        font-weight: $medium;
+        color: $white;
+        &--active {
+          font-weight: $bold;
+        }
+      }
+    }
+  }
+}

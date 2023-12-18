@@ -1,0 +1,53 @@
+.owl-carousel-main .owl-nav button.owl-prev {
+    position: absolute;
+    color: white;
+    font-size: 4rem;
+    width: 30px;
+    opacity: 0.8;
+    left: 0.5rem;
+}
+.owl-carousel-main .owl-nav button.owl-prev:hover {
+    background: transparent;
+}
+.owl-carousel-main .owl-nav button.owl-next {
+    position: absolute;
+    color: white;
+    font-size: 4rem;
+    width: 30px;
+    right: 0.5rem;
+    opacity: 0.8;
+}
+.owl-carousel-main .owl-nav button.owl-next:hover {
+    background: transparent;
+}
+.owl-carousel-news .owl-nav button.owl-prev {
+    position: absolute;
+    color: white;
+    font-size: 4rem;
+    width: 27px;
+    opacity: 1;
+    left: -4rem;
+}
+.owl-carousel-news .owl-nav button.owl-prev:hover {
+    background: transparent;
+}
+.owl-carousel-news .owl-nav button.owl-next {
+    position: absolute;
+    color: white;
+    font-size: 4rem;
+    width: 27px;
+    right: -4rem;
+    opacity: 1;
+}
+.owl-carousel-news .owl-nav button.owl-next:hover {
+    background: transparent;
+}
+.owl-theme .owl-nav {
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    margin-top: -25px;
+}
+.owl-carousel .owl-nav.disabled {
+    display: block;
+}

@@ -1,14 +1,26 @@
 // // Header.
 .header {
-  position: fixed;
+  position: relative;
   top: 0;
   left: 0;
   width: 100%;
   z-index: 5;
-  padding: 0.75rem 0;
-  background: $dark-background;
-  @include tablet {
-    padding: 0.35rem 0;
+  padding: 0.8rem 0;
+  @include laptop {
+    padding: 0;
+    height: auto;
+  }
+  background: $white;
+  &__container {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    @include tablet {
+      width: 100%;
+    }
+    @include laptop {
+      width: 75%;
+    }
   }
   &__layout {
     display: flex;
@@ -19,6 +31,16 @@
       flex-wrap: nowrap;
     }
   }
+  & .custom-logo-link {
+    margin: 0 0 0 1.5rem;
+    @include laptop {
+      margin: 0;
+    }
+  }
+  & .custom-logo {
+    width: 150px;
+    height: auto;
+  }
 }
 
 // Navigation.
@@ -26,62 +48,83 @@
   display: none;
   flex-basis: 100%;
   padding-top: 1rem;
-  @include tablet {
+  margin-bottom: -0.75rem;
+  @include laptop {
+    margin-bottom: 0;
     flex-basis: unset;
     padding: unset;
     display: initial;
   }
-  .menu-item-has-children {
+  .menu-list-standard {
     position: relative;
+  }
+  .menu-list-mega .menu-list {
+    right: 0;
+    padding: 0.65rem 0.9rem 0.25rem 0.9rem;
+    animation-name: megamenu;
+    animation-duration: 0s;
+    @include laptop {
+      padding: 1.8rem 1.5rem 1rem 1.5rem;
+      animation-name: megamenu;
+      animation-duration: 0.7s;
+    }
+  }
+  .menu-item-has-children {
+    // position: relative;
     &:hover {
       .menu-list {
-        display: block;
+        display: none;
+        flex-wrap: unset;
+        @include laptop {
+          display: flex;
+          flex-wrap: wrap;
+        }
       }
     }
   }
   .menu-item-has-children > a {
     position: relative;
-    padding-right: 2rem !important; // sass-lint:disable-line no-important
+    padding-right: 1rem !important; 
     &:after {
       @extend %pseudo;
+      content: "\f078";
+      font-family: Font Awesome\ 5 Free;
+      font-weight: 900;
       position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      background: url("../../dist/assets/images/icons/chevron-down.svg")
-        no-repeat center;
-      right: 5px;
-      width: 15px;
-      height: 15px;
-      z-index: 2;
+      font-size: 0.65rem;
+      right: -0.2rem;
+      top: 0.35rem;
     }
   }
   .menu {
-    @include tablet {
+    display: block;
+    @include laptop {
       display: flex;
       align-items: center;
       justify-content: center;
     }
-
-    ul {
-      display: none;
-      background: $dark-background;
-      padding: 1rem 1.5rem;
-      @include tablet {
-        position: absolute;
-        top: 100%;
-        left: 0;
-      }
+    &__description {
+      display: block;
     }
     li {
-      padding: 0.5rem 0;
-      @include tablet {
-        margin: 0 1rem;
-      }
+      padding: 0.8rem 0;
+      margin: 0;
+      border-top: 1px solid $midpalegrey;
+      background: $palegrey;
+      transition: background 0.15s ease-in;
       @include laptop {
-        margin: 0 2rem;
+        padding: 2rem 0;
+        margin: 0 1.85vw;
+        background: $white;
+        border-top: 1px solid transparent;
+      }
+      @include desktop-small {
+        padding: 2rem 0;
+        margin: 0 2.2vw;
       }
       @include desktop {
-        margin: 0 3rem;
+        padding: 2rem 0;
+        margin: 0 2rem;
       }
       &:first-of-type {
         margin-left: unset;
@@ -91,12 +134,91 @@
       }
       a {
         @extend %hover;
-        font-weight: $medium;
-        color: $white;
+        font-weight: $normal;
+        color: $black;
+        font-size: 1rem;
+        padding: 0 1.5rem;
+        @include laptop {
+          padding: 0;
+        }
         &--active {
           font-weight: $bold;
         }
       }
+      ul {
+        display: none;
+        background: transparent;
+        padding: 0.65rem 0.9rem 0.25rem 0.9rem;
+        position: relative;
+        @include laptop {
+          background: rgba(238, 238, 238, 0.93);
+          position: absolute;
+          padding: 1rem 1.5rem;
+          top: 100%;
+          left: 0;
+        }
+      }
+      ul li {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        @include laptop {
+          width: 10rem;
+        }
+      }
+      // ul .menu-list-mega {
+      //   width: 33.333%;
+      // }
+      // ul {
+      //   background: $palegrey;
+      // }
     }
+    li:hover {
+      background: $white;
+    }
+    li:hover a {
+      color: $primary-color;
+      @include laptop {
+        color: $black;
+      }
+    }
+    li:hover .menu-list li a {
+      color: $black;
+    }
+    li:hover .menu-list li a:hover {
+      color: $primary-color;
+    }
+    li:hover .menu-list li .menu__featured-image {
+      transition: all 0.15s ease-in;
+    }
+    li:hover .menu-list li .menu__featured-image:hover {
+      filter: grayscale(100%);
+    }
+    li .menu-list li {
+      background: transparent;
+      border-top: 1px solid transparent;
+      @include laptop {
+        background: transparent;
+      }
+    }
+    li:hover .menu-list li {
+      background: $white;
+      @include laptop {
+        background: transparent;
+      }
+      border-top: 1px solid transparent;
+    }
+  }
+}
+
+@keyframes megamenu {
+  from {opacity: 1; padding-top: 0;}
+  to {opacity: 1; padding-top: 0;}
+}
+
+@include laptop { 
+  @keyframes megamenu {
+    from {opacity: 0; padding-top: 2.2rem;}
+    to {opacity: 1; padding-top: 1.8rem;}
   }
 }

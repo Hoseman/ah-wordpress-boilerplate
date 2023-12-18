@@ -1,0 +1,169 @@
+
+.menu-list-mega .menu-list {
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .menu-list-mega .menu-list .mega {
+    text-align: left;
+    width: 100%;
+    @include laptop {
+        width: 22%;
+        text-align: center;
+    }
+    @include desktop-small {
+      width: 24%;
+    }
+    @include desktop {
+      width: 21%;
+    }
+    position: relative;
+  }
+  
+  .menu-list-mega .menu-list .mega-alt {
+    text-align: left;
+    width: 100%;
+    @include laptop {
+        text-align: center;
+        width: 17%;
+    }
+    position: relative;
+  }
+  
+  .menu-list-mega .menu-list .mega-1::after {
+    font-size: 1.6rem;
+    color: $primary-color;
+    position: absolute;
+    content: "\f055";
+    font-family: Font Awesome\ 5 Free;
+    font-weight: 900;
+    top: 0;
+    left: 50%;
+    margin-top: -0.3rem;
+    margin-left: -15px;
+    margin-bottom: 1rem;
+    display: none;
+    @include laptop {
+        display: block;
+    }
+  }
+  
+  .menu-list-mega .menu-list .mega-2::after {
+    font-size: 1.6rem;
+    color: $primary-color;
+    position: absolute;
+    content: "\f005";
+    font-family: Font Awesome\ 5 Free;
+    font-weight: 900;
+    top: 0;
+    left: 50%;
+    margin-top: -0.3rem;
+    margin-left: -15px;
+    margin-bottom: 1rem;
+    display: none;
+    @include laptop {
+        display: block;
+    }
+  }
+  
+  .menu-list-mega .menu-list .mega-3::after {
+    font-size: 1.6rem;
+    color: $primary-color;
+    position: absolute;
+    content: "\f013";
+    font-family: Font Awesome\ 5 Free;
+    font-weight: 900;
+    top: 0;
+    left: 50%;
+    margin-top: -0.3rem;
+    margin-left: -15px;
+    margin-bottom: 1rem;
+    display: none;
+    @include laptop {
+        display: block;
+    }
+  }
+  .menu-list-mega .menu-list .mega-4::after {
+    font-size: 1.6rem;
+    color: $primary-color;
+    position: absolute;
+    content: "\f02c";
+    font-family: Font Awesome\ 5 Free;
+    font-weight: 900;
+    top: 0;
+    left: 50%;
+    margin-top: -0.3rem;
+    margin-left: -15px;
+    margin-bottom: 1rem;
+    display: none;
+    @include laptop {
+        display: block;
+    }
+  }
+  
+  .menu-list-mega .menu-list .mega a {
+    font-size: 1rem;
+    line-height: 1.4rem;
+    font-weight: $normal;
+    padding: 0 1.5rem;
+    @include laptop {
+        font-size: 1.2rem;
+        line-height: 1.7rem;
+        font-weight: $medium;
+        padding: 2.99rem 2rem 1.8rem 2rem;
+    }
+    @include desktop-small {
+      padding: 2.99rem 3rem 1.8rem 3rem;
+    }
+  }
+  
+  .menu-list-mega .menu-list .mega-alt a {
+    font-size: 1rem;
+    font-weight: $normal;
+    padding: 0 1.5rem;
+    @include laptop {
+        font-size: 1.05rem;
+        font-weight: $medium;
+        padding: 0.5rem 0rem 0.5rem 0rem;
+    }
+  }
+  
+  .menu-list-mega .menu-list .mega a .menu__btn {
+    background: $primary-color;
+    color: white;
+    font-size: 0.9rem;
+    padding: 0.2rem 1.6rem 0.1rem 1.6rem;
+    margin-top: 0.95rem;
+    display: none;
+    @include laptop {
+        display: inline-block;
+    }
+  }
+  
+  .menu-list-mega .menu-list .mega a .menu__description {
+    font-size: 0.9rem;
+    font-weight: $normal;
+    line-height: 1.3rem;
+    margin-top: 0.5rem;
+    display: none;
+    @include laptop {
+        display: block;
+    }
+  }
+  .menu-list-mega .menu-list .mega-alt .menu__featured-image {
+    padding: 0 0.5rem;
+    display: none;
+    @include laptop {
+        display: block;
+    }
+  }
+  .menu-list-mega .menu-list .mega-alt .menu__featured-image img {
+    width: 100%;
+    object-fit: cover;
+    height: 150px;
+    display: none;
+    @include laptop {
+        display: block;
+    }
+  }
+  

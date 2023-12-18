@@ -17,12 +17,25 @@
 @import "components/link";
 @import "components/fallback";
 @import "components/toggle";
+@import "components/carousel";
+@import "components/carousel-small";
+@import "components/owl";
+@import "components/underline";
+@import "components/form";
+@import "components/banner";
+@import "components/news-section";
 
 @import "layout/containers";
 @import "layout/footer";
 @import "layout/header";
+@import "layout/megamenu";
 @import "layout/section";
+@import "layout/columns";
+@import "layout/two-column-featured";
+@import "layout/two-column-featured-contact";
 
 @import "pages/home";
+@import "pages/contact";
+@import "pages/news";
 
 @import "shame/shame";

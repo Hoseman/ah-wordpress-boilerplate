@@ -1,0 +1,11 @@
+# Application
+wp-content/plugins/*
+wp-content/uploads/*
+wp-content/themes/ah-wordpress-boilerplate/node_modules
+wp-content/themes/ah-wordpress-boilerplate/node_modules/*
+
+# WordPress
+wp-config.php
+
+# Other
+.DS_Store

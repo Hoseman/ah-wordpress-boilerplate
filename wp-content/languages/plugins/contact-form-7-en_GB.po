@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Plugins - Contact Form 7 - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2023-06-04 23:23:47+0000\n"
+"PO-Revision-Date: 2023-12-22 17:28:58+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -10,6 +10,30 @@ msgstr ""
 "X-Generator: GlotPress/4.0.0-alpha.11\n"
 "Language: en_GB\n"
 "Project-Id-Version: Plugins - Contact Form 7 - Stable (latest release)\n"
+
+#: modules/sendinblue/contact-form-properties.php:101
+#: modules/sendinblue/service.php:156
+msgid "Brevo integration"
+msgstr "Brevo integration"
+
+#. translators: 1: blog name, 2: blog URL
+#: includes/contact-form-template.php:111
+msgid "This email is a receipt for your contact form submission on our website (%1$s %2$s) in which your email address was used. If that was not you, please ignore this message."
+msgstr "This email is a receipt for your contact form submission on our website (%1$s %2$s) in which your email address was used. If that was not you, please ignore this message."
+
+#. translators: 1: blog name, 2: blog URL
+#: includes/contact-form-template.php:77
+msgid "This is a notification that a contact form was submitted on your website (%1$s %2$s)."
+msgstr "This is a notification that a contact form was submitted on your website (%1$s %2$s)."
+
+#: includes/config-validator/mail.php:259
+#: includes/config-validator/mail.php:349
+msgid "Unsafe email config is used without sufficient protection."
+msgstr "Unsafe email config is used without sufficient protection."
+
+#: includes/config-validator/validator.php:229
+msgid "Configuration error is detected."
+msgstr "Configuration error is detected."
 
 #: modules/sendinblue/service.php:163
 msgid "Brevo is active on this site."
